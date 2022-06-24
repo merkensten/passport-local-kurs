@@ -79,7 +79,7 @@ router.get('/protected-route', isAuth, (req, res, next) => {
 });
 
 router.get('/admin-route', isAdmin, (req, res, next) => {
-  res.send('You made it to the admin route.');
+  res.send('You made it to the admin route. --> <a href="/logout">Logout</a>');
 });
 
 // Visiting this route logs the user out
@@ -90,7 +90,7 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/login-success', (req, res, next) => {
   res.send(
-    '<p>You successfully logged in. --> <a href="/protected-route">Go to protected route</a></p>'
+    '<p>You successfully logged in. --> <a href="/protected-route">Go to protected route</a></p><p>go to the admin route <a href="/admin-route">here</a></p>'
   );
 });
 
